@@ -1,0 +1,389 @@
+:root {
+    --gradient: linear-gradient(to right bottom, #3bbcec, #575be5);
+    --dark: #082046;
+    --semi-dark: #0f2952;
+    --light: #fff;
+    --link: #1e2ebd;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: url(../images/backgrounds/home-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient( to right bottom, rgba(59, 190, 236, 0.3), rgba(52, 120, 221, 0.3));
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    height: 100%;
+    backdrop-filter: blur(3rem);
+    background-clip: padding-box;
+    position: fixed;
+    width: 100vw;
+}
+
+ ::-webkit-scrollbar {
+    width: 2px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: rgb(177, 188, 204);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3bbcec, #575be5, #3bbcec, #575be5);
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #3bbcec, #575be5, #3bbcec, #575be5);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+.glass-card {
+    color: var(--light);
+    background-color: linear-gradient( to top right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    width: 380px;
+    margin: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
+    border-radius: 10px;
+}
+
+.card {
+    color: var(--dark);
+    background-color: #fff;
+    margin: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
+    border-radius: 10px;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100vh;
+    background: linear-gradient(240deg, rgba(58, 85, 118, 0.7) 10%, #2c2e44 70%);
+    box-shadow: 3px 5px 6px rgba(45, 55, 68, 0.3);
+    padding: 1.25rem 0.5rem 2rem 0.5rem;
+    z-index: 2;
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.nav-links {
+    flex: 1;
+    margin-top: 2rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    transition: 0.1s ease-in-out;
+    flex: 3;
+}
+
+.nav-icon {
+    font-size: 1.3rem;
+    margin-right: 1.3rem;
+    transition: 0.1s ease;
+}
+
+.nav-text {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    background: linear-gradient(190deg, rgb(240, 117, 199), rgba(178, 117, 240));
+    color: var(--dark);
+}
+
+.nav-link:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+.active {
+    padding: 0.5rem;
+    background: linear-gradient(190deg, rgb(240, 117, 199), rgba(178, 117, 240));
+    color: var(--dark);
+}
+
+.content {
+    width: 80vw;
+    height: 100%;
+    margin-left: auto;
+}
+
+.home {
+    padding: 0 2rem;
+}
+
+.home .glass-card {
+    z-index: 99;
+    width: 90%;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+#greeting {
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: rgb(245, 230, 230);
+}
+
+.typing {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#name {
+    outline: none;
+    font-weight: 500;
+    color: rgb(245, 230, 230);
+}
+
+.accordion {
+    background: lightblue;
+    margin: 0 4.3rem 1rem 2rem;
+    border-radius: 10px;
+}
+
+.accordion-button {
+    padding: 0.8rem;
+    background: linear-gradient( to top right, rgba(255, 255, 255, 0.1), rgba(20, 92, 201, 0.3));
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: 0 5px 25px rgba(0 0 0 / 20%);
+    color: #222;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+.accordion-button::after {
+    content: "\25be";
+    right: 20px;
+    top: 20%;
+    position: absolute;
+    transform: scale(2);
+    transition: 0.3s ease;
+}
+
+.accordion-content {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    color: var(--semi-dark);
+    display: none;
+    overflow: auto;
+}
+
+.accordion-content .modal-btn {
+    color: var(--link);
+    font-weight: 500;
+    text-decoration: underline;
+    margin-left: 1rem;
+    transition: 0.3s ease;
+}
+
+.accordion-content .modal-btn:hover {
+    opacity: 0.7;
+}
+
+.accordion-button-active {
+    background: linear-gradient( to bottom left, rgba(255, 255, 255, 0.1), rgba(20, 92, 201, 0.3));
+}
+
+.accordion-button-active::after {
+    content: "\25b4";
+}
+
+.accordion-button-active+.accordion-content {
+    display: block;
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 85%;
+    margin: 3rem 1rem 0 1rem;
+    background-color: linear-gradient( to top right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    padding: 0.3rem;
+    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
+    border-radius: 10px;
+    backdrop-filter: blur(3rem);
+    background-clip: padding-box;
+    position: relative;
+}
+
+.home-card-modal {
+    padding: 0;
+    width: 225px;
+    height: 290px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 0.5rem;
+    color: var(--light);
+    box-shadow: 0 5px 25px rgba(0 0 0 / 20%);
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.home-card-modal:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(89, 97, 221, 0.2);
+    border-radius: 10px;
+}
+
+.home-card-modal:hover {
+    transform: translateY(-10px);
+}
+
+.modal-text {
+    background-color: rgba(0 0 0 / 50%);
+    padding: 1rem 0.6rem;
+    height: 7rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 90;
+}
+
+.home-card-modal h2 {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 0.7rem;
+}
+
+.home-card-modal p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #222;
+    transition: 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(360deg);
+}
+
+.header {
+    z-index: 999;
+    position: fixed;
+    background: var(--bg-color-dark);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 100px;
+    height: 3rem;
+    display: flex;
+    background: linear-gradient( 240deg, rgba(59, 190, 236) 10%, rgba(52, 120, 221) 100%);
+    backdrop-filter: blur(0.5rem);
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.menu>div {
+    height: 3px;
+    width: 25px;
+    background-color: var(--light);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu .line2 {
+    width: 15px;
+}
